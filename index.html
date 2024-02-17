@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P-Ticket-Assignment-5</title>
+    <!-- css file -->
+    <link rel="stylesheet" href="styles/style.css">
     <!-- google font links -->
     <!-- Raleway -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
@@ -26,9 +28,44 @@
       </script>
 
 </head>
-<body>
-    <header></header>
+<body class="font-raleway">
+    <header class="container mx-auto py-12">
+        <!-- navbar -->
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+              <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-lg font-medium text-[#030712B3]">
+                    <li><a>Home</a></li>
+                    <li><a>About</a></li>
+                    <li><a>Destination</a></li>
+                    <li><a>Search</a></li>
+                </ul>
+              </div>
+              <a class="btn btn-ghost text-4xl font-extrabold">P-Ticket</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+              <ul class="menu menu-horizontal px-1 text-lg font-medium text-[#030712B3]">
+                <li><a>Home</a></li>
+                <li><a>About</a></li>
+                <li><a>Destination</a></li>
+                <li><a>Search</a></li>
+              </ul>
+            </div>
+            <div class="navbar-end">
+              <div>
+                <button class="btn rounded-xl text-xl font-semibold bg-[#1DD1001A] text-primary-color border border-[#1DD10066]">Bus
+                    <img src="images/bus-icon.png" alt=""></button>
+              </div>
+            </div>
+          </div>
+    </header>
     <main></main>
     <footer></footer>
+
+
+    <script src="Js/script.js"></script>
 </body>
 </html>
