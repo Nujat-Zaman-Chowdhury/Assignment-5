@@ -107,33 +107,36 @@
         <!-- banner section end -->
     </header>
     <main>
+
         <!-- best offer section -->
         <section class="container px-6 mx-auto py-12 mt-14 lg:mt-32">
             <h2 class="text-center text-[#030712] font-bold text-4xl">Best offers for you</h2>
-            <!-- coupon-code left -->
-            <div class="flex items-center justify-center gap-6 mt-12">
-                <div class="w-[573px] h-[220px] rounded-3xl bg-[#FFBF0F] flex justify-evenly items-center">
-                    <div class="font-inter space-y-4 text-[#030712CC]">
-                        <span class="text-4xl font-black">15% OFF</span> <br>
-                        <span class="text-xl font-semibold my-4">on your next purchase</span><br>
+
+            <!-- coupon-code ticket left -->
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-6 mt-12">
+                <div class="lg:w-[573px] lg:h-[220px] rounded-3xl bg-[#FFBF0F] flex justify-evenly items-center">
+                    <div class="font-inter space-y-4 text-[#030712CC] pl-5 lg:pl-0">
+                        <span class="text-2xl lg:text-4xl font-black">15% OFF</span> <br>
+                        <span class="lg:text-xl font-semibold my-4">on your next purchase</span><br>
                         <span class="font-medium text-lg text-[#03071280]">use by January 2024</span>
                     </div>
                     <img src="images/cupon-devider.png" alt="">
                     <div class="space-y-3  font-raleway">
-                        <h3 id="coupon-code" class="coupon-code font-bold text-3xl text-[#030712]">NEW15</h3>
+                        <h3 id="new15" class="coupon-code font-bold text-3xl text-[#030712] pr-4 lg:pr-0">NEW15</h3>
                         <p class="#03071266">Coupon Code</p>
                     </div>
-                </div>
-            <!-- coupon-code right -->
-            <div class="w-[573px] h-[220px] rounded-3xl bg-[#F78C9C] flex justify-evenly items-center">
-                    <div class="font-inter space-y-4 text-[#030712CC]">
-                        <span class="text-4xl font-black ">20% OFF</span> <br>
-                        <span class="text-xl font-semibold my-4">on your next purchase</span><br>
+                </div> 
+
+                <!-- coupon-code ticket right -->
+                <div class="lg:w-[573px] lg:h-[220px] rounded-3xl bg-[#F78C9C] flex justify-evenly items-center">
+                        <div class="font-inter space-y-4 text-[#030712CC] pl-5 lg:pl-0">
+                        <span class="text-2xl lg:text-4xl font-black ">20% OFF</span> <br>
+                        <span class="lg:text-xl font-semibold my-4">on your next purchase</span><br>
                         <span class="font-medium text-lg text-[#03071280]">use by January 2024</span>
                     </div>
                     <img src="images/cupon-devider.png" alt="">
                     <div class="space-y-3  font-raleway">
-                        <h3 id="coupon-code" class="coupon-code font-bold text-3xl text-[#030712]">Couple 20</h3>
+                        <h3 id="couple20" class="coupon-code font-bold text-3xl text-[#030712] pr-4 lg:pr-0">Couple 20</h3>
                         <p class="#03071266">Coupon Code</p>
                     </div>
                 </div>
@@ -142,7 +145,29 @@
             </div>
         </section>
     </main>
-    <footer></footer>
+    <footer class="bg-[#030712]">
+        <div class="container mx-auto px-6 lg:px-16  py-6 lg:py-20 text-white">
+            <div class="flex flex-col lg:flex-row gap-6 lg:justify-between items-center">
+                <div class="lg:w-[374px] ">
+                    <h3 class="font-raleway text-3xl font-extrabold">P-Ticket</h3>
+                    <p class="text-[#FFFFFFCC] mt-4">P-Ticket is a digital platform to make your daily commuting better.</p>
+                </div>
+                <div class="">
+                    <h4 class="text-xl mb-4">Download our app</h4>
+                    <img src="images/googleplay.png" alt="">
+                </div>
+            </div>
+            <hr class="border-dashed border-[#FFFFFF4D] mt-12 mb-8">
+            <div class="font-inter flex flex-col lg:flex-row gap-6 lg:justify-between">
+                <p class="text-[#FFFFFFB3]">@all rights reserved, P-Ticket services limited.2024</p>
+                <div class="font-medium flex flex-col lg:flex-row lg:justify-center lg:items-center gap-8">
+                    <a href="">Terms & condition</a>
+                    <a href="">Return & refund policy</a>
+                    <a href="">Privacy policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
     <script src="Js/script.js"></script>
