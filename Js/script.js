@@ -51,52 +51,96 @@ for(const seat of seats){
         const price = p3.innerText;
         const convertedPrice = parseInt(price);
         
-        setCost('total-price',convertedPrice);
-        
+        totalPrice('total-price',parseInt(convertedPrice));
 
+        
         setGrandTotalCost();
-        
-        
-        
+ 
     })
     
 }
 
-function setCost(elementId,value){
+function totalPrice(elementId,value){
     const totalPrice = document.getElementById(elementId).innerText;
     const convertedTotalPrice = parseInt(totalPrice);
-    document.getElementById('total-price').innerText = parseInt(convertedTotalPrice) + parseInt(value);
+    const sum = (convertedTotalPrice) + parseInt(value);
+    setInnerText('total-price',sum);
 }
 
 function setGrandTotalCost(){
-        const grandTotalPrice = document.getElementById('grandtotal-price').innerText;
-        const convertedGrandTotalPrice = parseInt(grandTotalPrice);
+    const totalPrice = document.getElementById('total-price').innerText;
+    const convertedTotalPrice = parseInt(totalPrice);
+    setInnerText('grandtotal-price',convertedTotalPrice);
+    if(count === 4){
+        const applyButton = document.getElementById('apply-btn');
+        applyButton.removeAttribute('disabled');
         
-        // get input field value
-        if(count >= 4){
-            const applyBtn = document.getElementById('apply-btn');
-            applyBtn.removeAttribute('disabled');
-            applyCouponCode();
-            
-        }
-}
-
-
-function applyCouponCode(){
-    const applyBtn = document.getElementById('apply-btn');
-    applyBtn.addEventListener('click',function(coupon){
+        applyButton.addEventListener('click',function(){
         const inputField = document.getElementById('input-field');
         const inputFieldText = inputField.value;
-        const couponCode = inputFieldText;
+        if(inputFieldText === 'NEW15' || inputFieldText === 'Couple 20'){
+            const inputContainer = document.getElementById('input-container');
+            inputContainer.classList.add('hidden');
+            if(inputFieldText === 'NEW15'){
+                
+            //    const discountPrice = setInnerText('grandtotal-price',convertedTotalPrice * 0.15);
+            //    console.log(typeof discountPrice);
+               const discountPrice = convertedTotalPrice * 0.15 ;
 
-        if(couponCode === 'NEW15'){
+               
+               const discountContainer = document.getElementById('discount-container');
+               discountContainer.innerHTML = '';
+               const p1 = document.createElement('p');
+               p1.innerText = "Discount Price";
+               
+               
+               const p2 = document.createElement('p');
+               p2.innerText = "BDT" + " "+parseFloat(discountPrice).toFixed(2);
+
+               discountContainer.appendChild(p1);
+               discountContainer.appendChild(p2);
+
+               
+               setInnerText('grandtotal-price',parseFloat(convertedTotalPrice - discountPrice));
+
+            }
+            else if( inputFieldText === 'Couple 20'){
+               const discountPrice = convertedTotalPrice * 0.20 ;
+               const discountContainer = document.getElementById('discount-container');
+               discountContainer.innerHTML = '';
+               const p1 = document.createElement('p');
+               p1.innerText = "Discount Price";
+               
+               
+               const p2 = document.createElement('p');
+               p2.innerText = "BDT" + " "+parseFloat(discountPrice).toFixed(2);
+
+               discountContainer.appendChild(p1);
+               discountContainer.appendChild(p2);
+
+               
+               setInnerText('grandtotal-price',parseFloat(convertedTotalPrice - discountPrice));
+            }
+        };
             
-        }
-        
-        
-        
+})
+    }
+    
+}
+function apply(){
+    const applyButton = document.getElementById('apply-btn');
+    applyButton.addEventListener('click',function(){
+    // const inputField = document.getElementById('input-field');
+    // const inputFieldText = inputField.value
+    // if(inputFieldText === 'NEW15' || inputFieldText === 'Couple 20');
+    //     inputField.classList.add = 'hidden';
+    console.log("clicked");
     })
 }
 
+function setInnerText(id,value){
+            document.getElementById(id).innerText = value;
+        }
 
 
+   
