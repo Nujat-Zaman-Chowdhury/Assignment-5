@@ -51,11 +51,10 @@ for(const seat of seats){
         const price = p3.innerText;
         const convertedPrice = parseInt(price);
         
-        totalPrice('total-price',convertedPrice);
+        setCost('total-price',convertedPrice);
         
 
-        const grandTotalPrice = document.getElementById('grandtotal-price').innerText;
-        const convertedGrandTotalPrice = parseInt(grandTotalPrice);
+        setGrandTotalCost();
         
         
         
@@ -63,17 +62,41 @@ for(const seat of seats){
     
 }
 
-function totalPrice(elementId,value){
-    const totalPrice = document.getElementById('total-price').innerText;
+function setCost(elementId,value){
+    const totalPrice = document.getElementById(elementId).innerText;
     const convertedTotalPrice = parseInt(totalPrice);
     document.getElementById('total-price').innerText = parseInt(convertedTotalPrice) + parseInt(value);
 }
 
-function setBackgroundColor(getElementById){
-    const element = document.getElementById(getElementById);
-    element.classList.add('bg-[#1DD100]')
+function setGrandTotalCost(){
+        const grandTotalPrice = document.getElementById('grandtotal-price').innerText;
+        const convertedGrandTotalPrice = parseInt(grandTotalPrice);
+        
+        // get input field value
+        if(count >= 4){
+            const applyBtn = document.getElementById('apply-btn');
+            applyBtn.removeAttribute('disabled');
+            applyCouponCode();
+            
+        }
 }
 
+
+function applyCouponCode(){
+    const applyBtn = document.getElementById('apply-btn');
+    applyBtn.addEventListener('click',function(coupon){
+        const inputField = document.getElementById('input-field');
+        const inputFieldText = inputField.value;
+        const couponCode = inputFieldText;
+
+        if(couponCode === 'NEW15'){
+            
+        }
+        
+        
+        
+    })
+}
 
 
 
