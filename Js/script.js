@@ -121,7 +121,11 @@ function setGrandTotalCost(){
                
                setInnerText('grandtotal-price',parseFloat(convertedTotalPrice - discountPrice));
             }
-        };
+            
+        }
+        else{
+            alert("Please insert given coupon in correct format");
+        }
             
 })
     }
