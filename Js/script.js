@@ -15,14 +15,19 @@ let count = 0;
 const seatsContainer = document.getElementsByClassName('seat');
 const seats = document.querySelectorAll('.seat');
 for(const seat of seats){
-    seat.addEventListener('click',function(e){
+
+    
+        seat.addEventListener('click',function(e){
         
         e.target.style.backgroundColor = "#1DD100";
         
         count++;
         document.getElementById('seat-counter').innerText = count;
-
         
+        if(count>0){
+            const nextButton = document.getElementById('next-btn');
+            nextButton.removeAttribute('disabled');
+        }
 
         const seatLeft = document.getElementById('seat-left').innerText;
         const convertedSeatLeft = parseInt(seatLeft);
@@ -55,7 +60,8 @@ for(const seat of seats){
 
         
         setGrandTotalCost();
- 
+        
+       
     })
     
 }
@@ -70,8 +76,10 @@ function totalPrice(elementId,value){
 function setGrandTotalCost(){
     const totalPrice = document.getElementById('total-price').innerText;
     const convertedTotalPrice = parseInt(totalPrice);
+    
     setInnerText('grandtotal-price',convertedTotalPrice);
     if(count === 4){
+        alert("You can apply our coupons to get discount");
         const applyButton = document.getElementById('apply-btn');
         applyButton.removeAttribute('disabled');
         
@@ -95,7 +103,7 @@ function setGrandTotalCost(){
                
                
                const p2 = document.createElement('p');
-               p2.innerText = "BDT" + " "+parseFloat(discountPrice).toFixed(2);
+               p2.innerText = "BDT" + " "+parseInt(discountPrice);
 
                discountContainer.appendChild(p1);
                discountContainer.appendChild(p2);
@@ -113,13 +121,13 @@ function setGrandTotalCost(){
                
                
                const p2 = document.createElement('p');
-               p2.innerText = "BDT" + " "+parseFloat(discountPrice).toFixed(2);
+               p2.innerText = "BDT" + " "+parseInt(discountPrice);
 
                discountContainer.appendChild(p1);
                discountContainer.appendChild(p2);
 
                
-               setInnerText('grandtotal-price',parseFloat(convertedTotalPrice - discountPrice));
+               setInnerText('grandtotal-price',parseInt(convertedTotalPrice - discountPrice));
             }
             
         }
@@ -129,22 +137,22 @@ function setGrandTotalCost(){
             
 })
     }
+    else if(count < 4){
+        setInnerText('grand-total',parseInt(convertedTotalPrice));
+    }
+    
+    else if(count > 4){
+        alert('Per person can buy only 4 ticket')
+    }
     
 }
-function apply(){
-    const applyButton = document.getElementById('apply-btn');
-    applyButton.addEventListener('click',function(){
-    // const inputField = document.getElementById('input-field');
-    // const inputFieldText = inputField.value
-    // if(inputFieldText === 'NEW15' || inputFieldText === 'Couple 20');
-    //     inputField.classList.add = 'hidden';
-    console.log("clicked");
-    })
-}
+
 
 function setInnerText(id,value){
-            document.getElementById(id).innerText = value;
-        }
+ document.getElementById(id).innerText = value;
+}
 
 
+        
+    
    
