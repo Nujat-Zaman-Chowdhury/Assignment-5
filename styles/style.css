@@ -7,3 +7,6 @@
 .font-roboto{
     font-family: "Roboto", sans-serif;
 }
+.seat:hover{
+    cursor: pointer;
+}
