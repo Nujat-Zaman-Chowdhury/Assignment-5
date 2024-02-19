@@ -8,7 +8,25 @@ document.addEventListener('DOMContentLoaded',function(){
     })
 })
 
+// phone input field
 
+
+function validatePhone(){
+    const phoneInputField = document.getElementById('phone');
+    phoneInputField.addEventListener('input',function(){
+    const phoneNumValid = /^\d+$/.test(phoneInputField.value.trim());
+    const nextButton = document.getElementById('next-btn');
+    if(count>0 && phoneNumValid){
+        
+        nextButton.removeAttribute('disabled');
+    }
+    else{
+        nextButton.setAttribute('disabled',true);
+    }
+})
+}        
+        
+        
 
 // get seat
 let count = 0;
@@ -20,14 +38,14 @@ for(const seat of seats){
         seat.addEventListener('click',function(e){
         
         e.target.style.backgroundColor = "#1DD100";
-        
+        e.target.style.color = 'white';
+        e.target.setAttribute('disabled',true);
+
+
         count++;
         document.getElementById('seat-counter').innerText = count;
         
-        if(count>0){
-            const nextButton = document.getElementById('next-btn');
-            nextButton.removeAttribute('disabled');
-        }
+        validatePhone();
 
         const seatLeft = document.getElementById('seat-left').innerText;
         const convertedSeatLeft = parseInt(seatLeft);
@@ -78,7 +96,7 @@ function setGrandTotalCost(){
     const convertedTotalPrice = parseInt(totalPrice);
     
     setInnerText('grandtotal-price',convertedTotalPrice);
-    if(count === 4){
+    if(count == 4){
         alert("You can apply our coupons to get discount");
         const applyButton = document.getElementById('apply-btn');
         applyButton.removeAttribute('disabled');
