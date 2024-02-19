@@ -26,14 +26,25 @@ function validatePhone() {
 
 // get seat
 let count = 0;
+let seatInnerText =[]
 const seatsContainer = document.getElementsByClassName("seat");
 const seats = document.querySelectorAll(".seat");
 for (const seat of seats) {
   seat.addEventListener("click", function(e) {
+    const seatName = e.target.innerText;
+    
+    if(seatInnerText.includes(seatName)){
+        return;
+    }
+    else{
+        seatInnerText.push(seatName);
+    }
     if(count < 4){
     count++;
     e.target.style.backgroundColor = "#1DD100";
     e.target.style.color = "white";
+
+    
 
     document.getElementById("seat-counter").innerText = count;
 
