@@ -107,8 +107,7 @@ function setGrandTotalCost() {
         const inputContainer = document.getElementById("input-container");
         inputContainer.classList.add("hidden");
         if (inputFieldText === "NEW15") {
-          //    const discountPrice = setInnerText('grandtotal-price',convertedTotalPrice * 0.15);
-          //    console.log(typeof discountPrice);
+
           const discountPrice = convertedTotalPrice * 0.15;
 
           const discountContainer =
